@@ -1,0 +1,51 @@
+body {
+  background: radial-gradient(
+    circle at 10% 20%,
+    rgb(239, 246, 249) 0%,
+    rgb(206, 239, 253) 90%
+  );
+  font-family: "Poiret One", cursive;
+}
+.title {
+  font-family: "Cabin Sketch", cursive;
+  padding: 20px 0;
+  margin: 0;
+  font-size: 90px;
+}
+.city {
+  display: block;
+  margin: 0;
+  padding: 16px 0;
+  width: 670px;
+}
+.search-button {
+  position: relative;
+  left: 260px;
+  top: -38px;
+}
+
+.today {
+  text-align: center;
+}
+
+.currentDate,
+.currentCity {
+  text-align: left;
+  font-size: 34px;
+}
+.currentWeather {
+  font-size: 35px;
+}
+.emoji {
+  font-size: 45px;
+}
+.forecast {
+  padding: 20px;
+  text-align: center;
+}
+.forecastDay {
+  border: 1px solid #5acbf0;
+  border-radius: 50px;
+  padding-top: 15px;
+  margin-right: 15px;
+}
