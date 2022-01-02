@@ -40,35 +40,35 @@
       <div class="row today">
         <div class="col-5">
           <div class="currentDate">
-            <h2 id="current-date">December 2, 2021</h2>
+            Last updated:
+            <h2 id="current-date"></h2>
           </div>
           <br />
           <div class="currentCity">
-            <span id="current-city"> Toronto </span>
-            <span id="current-temp">15</span>
-            <a href="" id="current-celsius"> ºC</a> |
-            <a href="" id="current-fahrenheit"> ºF </a>
+            <span id="current-city"></span>
+            <span id="current-temp"></span>
+            <small>
+              <a href="" id="current-celsius"> ºC</a> |
+              <a href="" id="current-fahrenheit"> ºF </a>
+            </small>
           </div>
         </div>
         <div class="col-2">
           <p>
             Max
-            <span> 3ºC</span>
+            <span id="max-temp"></span> ºC
             <br />
             Min
-            <span> -2ºC</span>
+            <span id="min-temp"></span> ºC
+            <br />
+            Wind : <span id="wind-speed"> 12km/hr East </span>
+            <br />
+            Humidity: <span id="humidity">10 %</span>
           </p>
         </div>
         <div class="col-2 currentWeather">
-          <div class="currentEmoji">🌧</div>
-          Rainy
-        </div>
-        <div class="col-3">
-          <p>
-            Wind : 12km/hr East
-            <br />
-            Chance of rain: 100 %
-          </p>
+          <div class="currentIcon">🌧</div>
+          <span id="description">Rainy</span>
         </div>
       </div>
 
