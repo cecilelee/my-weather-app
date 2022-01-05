@@ -1,10 +1,10 @@
-function showCityTemperature(response) {
+/*function showCityTemperature(response) {
   let temperature = Math.round(response.data.main.temp);
   let cityTemp = document.querySelector("#current-temp");
   cityTemp.innerHTML = temperature;
 }
 
-/*function updateCityName(event) {
+function updateCityName(event) {
   event.preventDefault();
   let showCity = document.querySelector("#city-input");
   let currentCity = document.querySelector("#current-city");
@@ -118,6 +118,7 @@ function displayWeather(response) {
   let windElement = document.querySelector("#wind-speed");
   let humidityElement = document.querySelector("#humidity");
   let dateElement = document.querySelector("#current-date");
+  let iconElement = document.querySelector("#current-weather-icon");
 
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   maxTempElement.innerHTML = Math.round(response.data.main.temp_max);
@@ -127,6 +128,11 @@ function displayWeather(response) {
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
+  iconElement.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 let apiKey = "4cc4268b4dd30e55d28b095b019ccc32";
 let units = "metric";
