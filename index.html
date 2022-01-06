@@ -30,8 +30,13 @@
       <div class="row city">
         <div class="col-5">
           <form id="city-search">
-            <input type="text" id="city-input" placeholder="City/Location" />
-            <input type="submit" class="btn btn-outline-info" value="Search" />
+            <input
+              type="text"
+              id="city-input"
+              placeholder="City/Location"
+              autocomplete="off"
+            />
+            <input type="search" class="btn btn-outline-info" value="Search" />
           </form>
           <button id="current-location">Current Location</button>
         </div>
@@ -41,16 +46,16 @@
         <div class="col-5">
           <div class="currentDate">
             Last updated:
-            <h2 id="current-date"></h2>
+            <span id="current-date"></span>
           </div>
           <br />
-          <div class="currentCity">
+          <div class="currentCity currentWeather">
             <span id="current-city"></span>
+            <br />
             <span id="current-temp"></span>
-            <small>
-              <a href="" id="current-celsius"> ºC</a> |
-              <a href="" id="current-fahrenheit"> ºF </a>
-            </small>
+
+            <a href="" id="current-celsius" class="active"> ºC</a> |
+            <a href="" id="current-fahrenheit"> ºF </a>
           </div>
         </div>
         <div class="col-2">

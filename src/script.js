@@ -15,9 +15,8 @@ function updateCityName(event) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(showCityTemperature);
 }
-
-let city = document.querySelector("#city-search");
-city.addEventListener("submit", updateCityName);*/
+let newCity = document.querySelector("#city-search");
+newCity.addEventListener("search", updateCityName);*/
 
 let isCelsius = true;
 
@@ -28,10 +27,14 @@ function convertTemperature(event) {
     let convertedTemp = (currentTemp.innerHTML * 9) / 5 + 32;
     currentTemp.innerHTML = Math.round(convertedTemp);
     isCelsius = false;
+    celsiusTemp.classList.remove("active");
+    fahrenheitTemp.classList.add("active");
   } else if (this.id === "current-celsius" && !isCelsius) {
     let convertedTemp = ((currentTemp.innerHTML - 32) * 5) / 9;
     currentTemp.innerHTML = Math.round(convertedTemp);
     isCelsius = true;
+    fahrenheitTemp.classList.remove("active");
+    celsiusTemp.classList.add("active");
   }
 }
 
@@ -134,6 +137,7 @@ function displayWeather(response) {
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
+
 let apiKey = "4cc4268b4dd30e55d28b095b019ccc32";
 let units = "metric";
 let city = "Toronto";

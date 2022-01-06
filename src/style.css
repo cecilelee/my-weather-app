@@ -28,7 +28,10 @@ body {
   text-align: center;
 }
 
-.currentDate,
+.currentDate {
+  text-align: left;
+  font-size: 18px;
+}
 .currentCity {
   text-align: left;
   font-size: 34px;
@@ -48,4 +51,15 @@ body {
   border-radius: 50px;
   padding-top: 15px;
   margin-right: 15px;
+}
+
+.currentWeather .active {
+  color: black;
+  cursor: default;
+  text-decoration: none;
+}
+
+#current-celsius,
+#current-fahrenheit {
+  font-size: 20px;
 }
