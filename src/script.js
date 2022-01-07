@@ -1,23 +1,3 @@
-/*function showCityTemperature(response) {
-  let temperature = Math.round(response.data.main.temp);
-  let cityTemp = document.querySelector("#current-temp");
-  cityTemp.innerHTML = temperature;
-}
-
-function updateCityName(event) {
-  event.preventDefault();
-  let showCity = document.querySelector("#city-input");
-  let currentCity = document.querySelector("#current-city");
-  currentCity.innerHTML = `${showCity.value}`;
-  let apiKey = "4cc4268b4dd30e55d28b095b019ccc32";
-  let units = "metric";
-  let city = showCity.value;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
-  axios.get(apiUrl).then(showCityTemperature);
-}
-let newCity = document.querySelector("#city-search");
-newCity.addEventListener("search", updateCityName);*/
-
 let isCelsius = true;
 
 function convertTemperature(event) {
@@ -44,13 +24,8 @@ fahrenheitTemp.addEventListener("click", convertTemperature);
 let celsiusTemp = document.querySelector("#current-celsius");
 celsiusTemp.addEventListener("click", convertTemperature);
 
-/*function showLocalTemperature(response) {
-  let temperature = Math.round(response.data.main.temp);
-  let city = response.data.name;
-  let localCity = document.querySelector("#current-city");
-  let currentTemp = document.querySelector("#current-temp");
-  localCity.innerHTML = city;
-  currentTemp.innerHTML = temperature;
+function showLocalTemperature(response) {
+  search(response.data.name);
 }
 
 function getCurrentPosition(position) {
@@ -69,7 +44,7 @@ function onCurrentLocationClicked(event) {
 }
 
 let button = document.querySelector("#current-location");
-button.addEventListener("click", onCurrentLocationClicked);*/
+button.addEventListener("click", onCurrentLocationClicked);
 
 function formatDate(timestamp) {
   let currentDate = new Date(timestamp);
@@ -138,9 +113,19 @@ function displayWeather(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
-let apiKey = "4cc4268b4dd30e55d28b095b019ccc32";
-let units = "metric";
-let city = "Toronto";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+function search(city) {
+  let apiKey = "4cc4268b4dd30e55d28b095b019ccc32";
+  let units = "metric";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
 
-axios.get(apiUrl).then(displayWeather);
+  axios.get(apiUrl).then(displayWeather);
+}
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityElement = document.querySelector("#city-input");
+  search(cityElement.value);
+}
+search("Toronto");
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
