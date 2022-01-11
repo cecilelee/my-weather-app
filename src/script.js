@@ -87,6 +87,26 @@ function formatDate(timestamp) {
 
   return `${day} ${month} ${date}, ${hour}:${minutes}`;
 }
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Friday", "Saturday", "Sunday", "Monday", "Tuesday"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+  <div class="col-2 forecastDay">
+          <h3>${day}</h3>
+          <img src="https://openweathermap.org/img/wn/02n@2x.png" alt="" id="current-weather-icon" />
+          <br />
+          2ºC
+        </div>`;
+  });
+
+  forecastElement.innerHTML = forecastHTML + `</div>`;
+}
 function displayWeather(response) {
   let temperatureElement = document.querySelector("#current-temp");
   let maxTempElement = document.querySelector("#max-temp");
@@ -126,6 +146,8 @@ function handleSubmit(event) {
   search(cityElement.value);
 }
 search("Toronto");
+
+displayForecast();
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
