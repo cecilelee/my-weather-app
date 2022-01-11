@@ -58,3 +58,7 @@ body {
 #current-fahrenheit {
   font-size: 20px;
 }
+
+#weather-forecast-min-temp {
+  color: coral;
+}
