@@ -51,18 +51,16 @@
 
       <div class="row today">
         <div class="col-5">
-          <div class="currentDate">
-            Last updated:
-            <span id="current-date"></span>
-          </div>
-          <br />
-          <div class="currentCity currentWeather">
+          <div class="currentCity">
             <span id="current-city"></span>
+            <div id="description" class="currentWeather"></div>
             <br />
-            <span id="current-temp"></span>
-
-            <a href="" id="current-celsius" class="active"> ºC</a> |
-            <a href="" id="current-fahrenheit"> ºF </a>
+            <div class="col-6">
+              <img src="" alt="" id="current-weather-icon" />
+              <span id="current-temp"></span>
+              <a href="" id="current-celsius" class="active"> ºC</a> |
+              <a href="" id="current-fahrenheit"> ºF </a>
+            </div>
           </div>
         </div>
         <div class="col-2">
@@ -78,15 +76,15 @@
             Humidity: <span id="humidity"></span>%
           </p>
         </div>
-        <div class="col-2 currentWeather">
-          <img src="" alt="" id="current-weather-icon" />
-          <div id="description"></div>
-        </div>
       </div>
 
       <br />
 
       <div class="row forecast" id="forecast"></div>
+      <div class="currentDate">
+        Last updated:
+        <span id="current-date"></span>
+      </div>
       <a href="https://github.com/cecilelee/my-weather-app" target="_blank"
         >Open source code </a
       >by Cecile Lee

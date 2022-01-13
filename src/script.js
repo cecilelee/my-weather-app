@@ -101,8 +101,8 @@ function displayForecast() {
           <h3>${day}</h3>
           <img src="https://openweathermap.org/img/wn/02n@2x.png" alt="" id="current-weather-icon" />
           <br />
-          <span id="weather-forecast-min-temp">2ºC </span>  
           <span id="weather-forecast-max-temp">4ºC </span> 
+          <span id="weather-forecast-min-temp">2ºC </span>  
         </div>`;
   });
 
