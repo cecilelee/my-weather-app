@@ -1,8 +1,9 @@
 body {
-  background: radial-gradient(
-    circle at 10% 20%,
-    rgb(239, 246, 249) 0%,
-    rgb(206, 239, 253) 90%
+  background: linear-gradient(
+    89.9deg,
+    rgb(208, 246, 255) 0.1%,
+    rgb(255, 237, 237) 47.9%,
+    rgb(255, 255, 231) 100.2%
   );
   font-family: "Poiret One", cursive;
 }
@@ -48,6 +49,9 @@ body {
   margin-right: 15px;
 }
 
+.weatherDetails {
+  margin-top: 94px;
+}
 .currentWeather .active {
   color: black;
   cursor: default;
