@@ -1,6 +1,23 @@
 body {
   font-family: "Poiret One", cursive;
 }
+
+.backgroundNight {
+  background: radial-gradient(
+    circle at 50.3% 44.5%,
+    rgb(116, 147, 179) 0%,
+    rgb(62, 83, 104) 100.2%
+  );
+}
+
+.backgroundDay {
+  background: radial-gradient(
+    circle at 10% 20%,
+    rgb(137, 247, 254) 0%,
+    rgb(102, 166, 255) 90%
+  );
+}
+
 .title {
   font-family: "Cabin Sketch", cursive;
   padding: 20px 0;
@@ -59,20 +76,4 @@ body {
 
 #weather-forecast-min-temp {
   color: coral;
-}
-
-.backgroundNight {
-  background: radial-gradient(
-    circle at 50.3% 44.5%,
-    rgb(116, 147, 179) 0%,
-    rgb(62, 83, 104) 100.2%
-  );
-}
-
-.backgroundDay {
-  background: radial-gradient(
-    circle at 10% 20%,
-    rgb(137, 247, 254) 0%,
-    rgb(102, 166, 255) 90%
-  );
 }
