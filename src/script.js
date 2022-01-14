@@ -46,6 +46,16 @@ function onCurrentLocationClicked(event) {
 let button = document.querySelector("#current-location");
 button.addEventListener("click", onCurrentLocationClicked);
 
+function updateBackgroundColor() {
+  let date = new Date();
+  let hour = date.getHours();
+  if (hour < 6 || hour > 18) {
+    document.body.classList.add("backgroundNight");
+  } else {
+    document.body.classList.add("backgroundDay");
+  }
+}
+
 function formatDate(timestamp) {
   let currentDate = new Date(timestamp);
   let date = currentDate.getDate();
@@ -84,8 +94,8 @@ function formatDate(timestamp) {
     "December",
   ];
   let month = months[currentDate.getMonth()];
-
-  return `${day} ${month} ${date}, ${hour}:${minutes}`;
+  currentDate = `${day} ${month} ${date}, ${hour}:${minutes}`;
+  return currentDate;
 }
 
 function formatForecastDay(timestamp) {
@@ -103,6 +113,7 @@ function formatForecastDay(timestamp) {
 
   return days[day];
 }
+
 function displayForecast(response) {
   let forecast = response.data.daily;
 
@@ -140,6 +151,7 @@ function getForecast(coordinates) {
 
   axios.get(apiUrl).then(displayForecast);
 }
+
 function displayWeather(response) {
   let temperatureElement = document.querySelector("#current-temp");
   let maxTempElement = document.querySelector("#max-temp");
@@ -175,12 +187,16 @@ function search(city) {
 
   axios.get(apiUrl).then(displayWeather);
 }
+
 function handleSubmit(event) {
   event.preventDefault();
   let cityElement = document.querySelector("#city-input");
   search(cityElement.value);
 }
+
 search("Toronto");
+
+updateBackgroundColor();
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
