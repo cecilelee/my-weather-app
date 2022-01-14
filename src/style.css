@@ -3,11 +3,7 @@ body {
 }
 
 .backgroundNight {
-  background: radial-gradient(
-    circle at 50.3% 44.5%,
-    rgb(116, 147, 179) 0%,
-    rgb(62, 83, 104) 100.2%
-  );
+  background: linear-gradient(rgb(52, 102, 174) 0%, rgb(83, 144, 241) 100%);
 }
 
 .backgroundDay {
@@ -75,5 +71,5 @@ body {
 }
 
 #weather-forecast-min-temp {
-  color: coral;
+  color: rgba(0, 0, 0, 0.295);
 }
