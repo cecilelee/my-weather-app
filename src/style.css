@@ -57,9 +57,13 @@ body {
 }
 
 .weatherDetails {
-  margin-top: 94px;
+  margin-top: 70px;
 }
 
+#search {
+  position: relative;
+  left: -20px;
+}
 #weather-forecast-min-temp {
   color: rgba(0, 0, 0, 0.295);
 }
