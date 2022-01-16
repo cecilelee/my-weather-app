@@ -59,16 +59,6 @@ body {
 .weatherDetails {
   margin-top: 94px;
 }
-.currentWeather .active {
-  color: black;
-  cursor: default;
-  text-decoration: none;
-}
-
-#current-celsius,
-#current-fahrenheit {
-  font-size: 20px;
-}
 
 #weather-forecast-min-temp {
   color: rgba(0, 0, 0, 0.295);

@@ -1,29 +1,3 @@
-let isCelsius = true;
-
-function convertTemperature(event) {
-  event.preventDefault();
-  let currentTemp = document.querySelector("#current-temp");
-  if (this.id === "current-fahrenheit" && isCelsius) {
-    let convertedTemp = (currentTemp.innerHTML * 9) / 5 + 32;
-    currentTemp.innerHTML = Math.round(convertedTemp);
-    isCelsius = false;
-    celsiusTemp.classList.remove("active");
-    fahrenheitTemp.classList.add("active");
-  } else if (this.id === "current-celsius" && !isCelsius) {
-    let convertedTemp = ((currentTemp.innerHTML - 32) * 5) / 9;
-    currentTemp.innerHTML = Math.round(convertedTemp);
-    isCelsius = true;
-    fahrenheitTemp.classList.remove("active");
-    celsiusTemp.classList.add("active");
-  }
-}
-
-let fahrenheitTemp = document.querySelector("#current-fahrenheit");
-fahrenheitTemp.addEventListener("click", convertTemperature);
-
-let celsiusTemp = document.querySelector("#current-celsius");
-celsiusTemp.addEventListener("click", convertTemperature);
-
 function showLocalTemperature(response) {
   search(response.data.name);
 }
