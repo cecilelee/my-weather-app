@@ -177,9 +177,9 @@ function handleSubmit(event) {
   search(cityElement.value);
 }
 
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
+
 search("Toronto");
 
 updateBackgroundColor();
-
-let form = document.querySelector("#search-form");
-form.addEventListener("submit", handleSubmit);
