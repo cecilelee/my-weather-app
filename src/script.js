@@ -49,7 +49,7 @@ button.addEventListener("click", onCurrentLocationClicked);
 function updateBackgroundColor() {
   let date = new Date();
   let hour = date.getHours();
-  if (hour < 6 || hour > 18) {
+  if (hour < 6 || hour >= 18) {
     document.body.classList.add("backgroundNight");
   } else {
     document.body.classList.add("backgroundDay");
