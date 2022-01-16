@@ -185,7 +185,16 @@ function search(city) {
   let units = "metric";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
 
-  axios.get(apiUrl).then(displayWeather);
+  axios
+    .get(apiUrl)
+    .then(displayWeather)
+    .catch(function (error) {
+      if (error.response.status === 404) {
+        alert(`Didn't find weather data for ${city}`);
+      } else {
+        alert("Unknown error");
+      }
+    });
 }
 
 function handleSubmit(event) {
